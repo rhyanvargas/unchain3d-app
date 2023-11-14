@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: Request) {
 	// TODO: Get webflow user email from request body...
-	const { email } = await request.json();
+	// const { email } = await request.json();
 	const options = {
 		method: "POST",
 		headers: {
@@ -10,7 +10,7 @@ export async function POST(request: Request) {
 			"content-type": "application/json",
 			"x-api-key": process.env.METAKEEP_API_KEY,
 		},
-		body: JSON.stringify({ user: { email } }),
+		body: JSON.stringify({ user: { email: "rhyan@readyweb3.io" } }),
 	};
 
 	// Create user wallet...
