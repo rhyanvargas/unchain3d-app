@@ -1,4 +1,3 @@
-import { log } from "console";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: Request) {
@@ -9,7 +8,7 @@ export async function POST(request: Request) {
 		headers: {
 			accept: "application/json",
 			"content-type": "application/json",
-			"x-api-key": "AhBY/nIJw0ZvN8/iPUP7xbUNTrvcZEKhPKtqApwrDy5V",
+			"x-api-key": process.env.METAKEEP_API_KEY,
 		},
 		body: JSON.stringify({ user: { email } }),
 	};
@@ -20,7 +19,6 @@ export async function POST(request: Request) {
 		options
 	).then((res) => res.json());
 
-	console.log(res);
 	console.log(res);
 
 	return NextResponse.json(res);
